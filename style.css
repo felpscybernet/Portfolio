@@ -151,11 +151,12 @@ a {
 /* Imagem do perfil */
 #profile-pic {
   border-radius: 50%;
+  display: inline-block;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-style: outset;
-  border-color: rgba(255, 68, 0, 0.322);
+  border-color: rgb(97, 132, 185);
 }
 
 #email {

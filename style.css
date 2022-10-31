@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Mode */
+  --mainTextColor-light: #000;
+  --secondaryTextColor-light: (51 51 51);
+  --mainLinkColor-light: #0da2b8;
+  --mainBorderColor-light: rgb(218, 218, 218);
+  --mainBgColor-light: rgb(249, 250, 251);
+
+  /* Dark Mode */
+  --mainTextColor-dark: #fff;
+  --secondaryTextColor-dark: #adb0b1;
+  --mainLinkColor-dark: rgb(30, 190, 214);
+  --mainBorderColor-dark: #2b3031;
+  --mainBgColor-dark: #131415;
+
+  /* Normal Mode */
+  --mainTextColor: var(--mainTextColor-light);
+  --secondaryTextColor: var(--secondaryTextColor-light);
+  --mainLinkColor: var(--mainLinkColor-light);
+  --mainBorderColor: var(--mainBorderColor-light);
+  --mainBgColor: var(--mainBgColor-light);
+}
+
+* {
+  font-family: 'Readex Pro', sans-serif;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  color: var(--mainTextColor);
+}
+
+body {
+  background-color: var(--mainBgColor);
+}
+
+p, span, li {
+  color: var(--secondaryTextColor);
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--mainLinkColor);
+  font-size: 500;
+}
+
+li {
+  line-height: 1.9em;
+}
+
+
+
+#container--main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Mídias sociais */
+.section--page {
+  padding-top: 10px;
+  padding-bottom: 1em;
+}
+
+.midias {
+    margin-bottom: 1px;
+}
+
+
+/* Profile - Perfil */
+#wrapper--hero {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+/* Nome perfil */
+#user-name {
+  font-size: 30px;
+  line-height: 1em;
+  opacity: 0;
+  animation: fadeInText 0s 1.3s both;
+}
+
+.text-block {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.text-block:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(49, 49, 49);
+    transform: translateX(-100%);
+    animation: enLargeBlock 0.5s 0.6s both, revealBlock 0.5s 1.5s both;
+}
+
+/* Key username */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes enLargeBlock {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes revealBlock {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+/* Bio perfil  */
+#bio {
+  font-weight: 300;
+  text-align: justify;
+  line-height: none;
+  letter-spacing: -1px;
+  background: #e4e3e3bb;
+  -webkit-box-shadow: 10px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 10px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 10px 7px 5px rgba(50, 50, 50, 0.77);
+  border-radius: 5px;
+  padding: 0.2em;
+  
+}
+a {
+  font-weight: 300;
+  text-align: justify;
+  line-height: none;
+}
+
+/* Imagem do perfil */
+#profile-pic {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-style: outset;
+  border-color: rgba(255, 68, 0, 0.322);
+}
+
+#email {
+  color: var(--mainTextColor);
+}
+
+#socials--list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1em;
+  flex-wrap: wrap;
+}
+
+#socials--list a {
+  font-size: 0.9em;
+  color: var(--secondaryTextColor);
+  transition: 0.5s;
+}
+
+#socials--list a:hover {
+  color: var(--mainLinkColor);
+}
+
+
+/* Habilidades e qualificações */
+
+#qualifications--list {
+  list-style: none;
+  list-style-position: outside;
+}
+
+/* Linguagens e compiladores */
+
+#wrapper--techstack__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  font-size: 0.9em;
+}
+
+.card--techstack {
+  border: 1px solid var(--mainBorderColor);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+/* Minha história */
+
+.card--work-history {
+  border-left: 1px solid var(--mainBorderColor);
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-left: 2em;
+}
+
+/* Quebra de linha  */
+.line-break {
+  background-color: var(--mainBorderColor);
+  height: 1px;
+}
+
+/* Projetos */
+
+.card--project {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 1px solid var(--mainBorderColor);
+}
+
+.card--project a {
+  color: var(--mainTextColor);
+  transition: 0.5s;
+}
+
+.card--project a:hover {
+  color: var(--mainLinkColor);
+}
+
+
+/* Layout */
+@media(max-width:600px) {
+  #wrapper--hero{
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  #profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .section--page {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .card--work-history {
+    border-left: none;
+    padding-left: 0;
+  }
+}
